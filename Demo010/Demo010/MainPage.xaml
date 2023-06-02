@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo010.MainPage">
+
+    <StackLayout>
+        <Entry x:Name="entry1"></Entry>
+
+        <Slider x:Name="slider1"
+                Maximum="360"
+                VerticalOptions="CenterAndExpand"
+                BindingContext="{x:Reference entry1}"
+                Value="{Binding Path=Text}">
+        </Slider>
+        
+        <Label Text="ROTATION"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"               
+               BindingContext="{x:Reference entry1}"
+               Rotation="{Binding Path=Text}">
+        </Label>
+
+        <!--<Label Text="ROTATION"               
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"               
+               BindingContext="{x:Reference entry1}"
+               FontSize="{Binding Path=Text}">
+        </Label>-->
+    </StackLayout>
+
+</ContentPage>
